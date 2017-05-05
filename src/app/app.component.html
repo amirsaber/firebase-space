@@ -11,8 +11,9 @@
   </md-toolbar-row>
 </md-toolbar>
 <div *ngIf="logedIn">
-  <div fxLayout="column" fxLayoutAlign="center center">
-    <app-item-list></app-item-list>
-    <app-add-item></app-add-item>
+  <div fxLayout="row" fxLayoutWrap fxLayoutAlign="center center">
+    <app-item-list fxFlex="300px"></app-item-list>
+    <div fxFlex="100%"></div>
+    <app-add-item fxFlex="300px"></app-add-item>
   </div>
 </div>

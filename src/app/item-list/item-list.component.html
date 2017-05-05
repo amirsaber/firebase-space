@@ -1,5 +1,5 @@
-<md-list>
-  <md-list-item class="text" *ngFor="let item of items | async">
+<md-list fxLayout="column" fxLayoutAlign="center stretch">
+  <md-list-item *ngFor="let item of items | async">
     <md-icon [mdMenuTriggerFor]="menu" md-list-icon>assignment</md-icon>
     <div md-line>
       <md-checkbox [checked]="item.done" type="checkbox" (change)="change(item)">{{item.name}}</md-checkbox>
