@@ -1,0 +1,12 @@
+<md-list>
+  <md-list-item class="text" *ngFor="let item of items | async">
+    <md-icon [mdMenuTriggerFor]="menu" md-list-icon>assignment</md-icon>
+    <div md-line>
+      <md-checkbox [checked]="item.done" type="checkbox" (change)="change(item)">{{item.name}}</md-checkbox>
+    </div>
+    <p md-line> Status: {{item.done?'Complete':'Todo'}} </p>
+    <md-menu #menu="mdMenu">
+      <button md-menu-item (click)="remove(item)">Remove</button>
+    </md-menu>
+  </md-list-item>
+</md-list>

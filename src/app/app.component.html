@@ -1,3 +1,18 @@
-<h1>
-  {{title}}
-</h1>
+<button *ngIf="!logedIn" md-raised-button (click)="login()">Login</button>
+<div *ngIf="logedIn">
+  <md-toolbar color="primary">
+    <md-toolbar-row>
+      <md-icon>verified_user</md-icon>
+      <span>Welcome {{ (user | async)?.email }}</span>
+    </md-toolbar-row>
+  </md-toolbar>
+  <div>
+    <app-item-list></app-item-list>
+  </div>
+  <div>
+    <div>
+      <app-add-item></app-add-item>
+    </div>
+    <button md-raised-button (click)="logout()">Logout</button>
+  </div>
+</div>
